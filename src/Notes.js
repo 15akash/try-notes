@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import Header from "./Header";
 import NoteItem from "./NoteItem";
+import Card from "./Card";
 
 function Notes(props) {
   return (
@@ -8,11 +9,20 @@ function Notes(props) {
       <Header />
       <div className="flex flex-col ">
         <ul>
-          <NoteItem
-            key={1}
-            title="Just a sample title"
-            description="This is just a sample notes description. To add notes, click on the 'Add Notes' option from the menu above."
-          />
+          <Card>
+            <li className="flex flex-col">
+              <div className="my-2 text-lg">
+                <span className="font-bold">Title : </span>
+                Just a sample title
+              </div>
+
+              <div className="my-1">
+                <span className="font-bold">Description : </span>
+                This is just a sample description. Please click on add button
+                from the 'navigation bar' to add notes below.
+              </div>
+            </li>
+          </Card>
         </ul>
         <ul>
           {props.notes.map((note) => (
